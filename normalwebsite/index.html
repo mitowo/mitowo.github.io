@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="vani.css">
+	<link rel="icon" type="image/png" href="vnai.png">
+    <title>HAPPY BIRTHDAY VANI</title>
+</head>
+
+<audio id="birthdayaudio">
+    <source src="./birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <button onclick="togglePlay()" class="button" type="button">Toggle Audio</button>
+
+  <script>
+    var birthdayaudio = document.getElementById("birthdayaudio");
+    var isPlaying = false;
+
+    function togglePlay() {
+        isPlaying ? birthdayaudio.pause() : birthdayaudio.play();
+    };
+
+    birthdayaudio.onplaying = function() {
+        isPlaying = true;
+    };
+    birthdayaudio.onpause = function() {
+        isPlaying = false;
+    };
+  </script>
+
+<body>
+    <div class="box">
+        <h2 class="title1"></h2>
+        <h2 class="title2">HAPPY BIRTHDAY VANI</h2>
+        <!-- https://magma.com/d/UgEx3FHWmS <3 -->
+      </div>   
+
+    <script>     
+        var x = document.getElementById("birthdayaudio"); 
+        x.play(); 
+    </script>
+        
+    <script src="./confetti.js"></script>
+
+    <script>
+        const start = () => {
+            setTimeout(function() {
+                confetti.start();
+            }, 1000);
+        };
+
+        // const stop = () => {
+        //     setTimeout(function() {
+        //         confetti.stop()
+        //     }, 10000); 
+        // };
+        start();
+        // stop();
+
+    </script>
+</body>
+</html>

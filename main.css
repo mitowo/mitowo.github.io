@@ -17,6 +17,18 @@ p {
 	padding: 0pt;
 	font-weight: 300;
 }
+g {
+	font-size: 10pt;
+	margin: 2pt;
+	padding: 0pt;
+	font-weight: 300;
+}
+b {
+	font-size: 15pt;
+	margin: 2pt;
+	padding: 0pt;
+	font-weight: 300;
+}
 a {
 	color: rgb(138, 142, 190);
 	font-weight: 400;

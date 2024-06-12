@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS';
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	align-items: center;
+    display: flex;
+	color: rgb(245, 176, 72);
+	text-shadow: 6px 6px 0px rgb(0, 0, 0);
+	background-image: url('./0fixd902dala2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+p {
+	font-size: 40pt;
+	text-align: center;
+	margin: 2pt;
+	padding: 0pt;
+	font-weight: 300;
+}
+
+#box1 {
+	float:left;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-size:40px;
+	width: 100%;
+	height: 100%;
+	color: rgb(245, 176, 72);
+	justify-content: center;
+	}
+
+.box {
+	position: center;
+  	height: 200px;
+  	background: rgb(0, 0, 0);
+}
+
+.title1,
+.title2 {
+	font-size: 45pt;
+  	transition: 0s;
+}
+
+.title2 {
+  	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* hide title */
+	opacity: 0;
+}
+
+/* swap titles */
+.box:hover .title1 {
+  	opacity: 0;
+}
+
+.box:hover .title2 {
+  	opacity: 1;
+}
+
+.button {
+    top:1.5%;
+    left:94%;
+    width:100px;
+    height:40px;
+    position: absolute;
+    z-index: 2;
+    color: rgb(0, 0, 0); 
+	background: rgb(245, 176, 72);
+    }

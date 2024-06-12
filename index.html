@@ -7,15 +7,96 @@
 		   font-family: First Coffee
 		}
 		</style>
-		<title>mitowo</title>
+		<title>Mito</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<link rel="icon" type="image/png" href="/favicon.png">
 	</head>
+	
 	<body>
 		<center>
 			<header id="header">
-				<img src='mito.png' onmouseover="this.src='owo.png';" onmouseout="this.src='mito.png';" style="padding-bottom: 35px; width: 350px; pointer-events: yes;">
-				<p>welcome!! my name is Mito and I'm from New York City. I play <a href="https://osu.ppy.sh">osu!</a> standard (global rank #4900) and I'm also interested in tech related stuff!</p>
+				<script>
+					function displayCurrentTime() {
+						fetch('https://worldtimeapi.org/api/timezone/America/New_York')
+							.then(response => response.json())
+							.then(data => {
+								
+								const currentTime = new Date(data.utc_datetime);
+				
+								const formattedDate = currentTime.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York' });
+								const formattedTime = currentTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short', timeZone: 'America/New_York'});
+								
+								let blank = " ";
+								let UTC = " (UTC-4)"
+
+								const combined = formattedDate.concat(blank, formattedTime, UTC);
+
+								document.getElementById('datetime').textContent = combined;
+							})
+					}
+					setInterval(displayCurrentTime, 1000);
+				</script>
+
+				<p>Current Time for Mito:</p>
+				<li><p id="datetime"></p></li>
+				<br> <br>
+				
+				<style>
+					#pat {
+						width: 350px;
+						cursor: pointer;
+					}
+				</style>
+
+				<div id="pat">
+					<img id="image" src='mito.png' onmouseover="this.src='owo.png';" onmouseout="this.src='mito.png';" style="padding-bottom: 35px; width: 350px; pointer-events: yes;" alt="Image">
+				</div>
+
+				<script>
+					var imageContainer = document.getElementById('pat');
+					var image = document.getElementById('image');
+					var gifSrc = "owo.gif";
+					var imageSrc = "owo.png";
+					var mitoSrc = "mito.png";
+					var isMouseDown = false;
+					var clickCount = 0;
+				
+					imageContainer.addEventListener('mousedown', function() {
+						isMouseDown = true;
+						clickCount++;
+						setTimeout(function() {
+							if (isMouseDown && clickCount === 1) {
+								image.src = gifSrc;
+							}
+						}, 0); // Delay for detecting single click
+					});
+				
+					imageContainer.addEventListener('mouseup', function() {
+						isMouseDown = false;
+						if (clickCount >= 1) {
+							setTimeout(function() {
+								if (!isMouseDown) {
+									image.src = imageSrc; // Switch back to image after single click
+								}
+							}, 200); // Delay for detecting double click
+						}
+					});
+				
+					imageContainer.addEventListener('click', function() {
+						if (clickCount >= 1) {
+							clickCount = 0;
+						}
+					});
+
+					imageContainer.addEventListener('mouseout', function() {
+						if (clickCount >= 1) {
+							clickCount = 0;
+						}
+					});
+
+				</script>
+				<p>welcome!! my name is Mito and I'm from New York City. I play <a href="https://osu.ppy.sh">osu!</a> standard <a href="https://osu.ppy.sh/rankings/osu/performance?page=60#scores">(global rank ~#2800)</a> and I'm also interested in tech related stuff!</p>
+
 				<br>
 				<ul>
 					<li><a href="https://www.youtube.com/@mitowo">youtube</a></li>
@@ -30,7 +111,19 @@
 					<li><a href="https://ko-fi.com/mitowo_">ko-fi</a></li>
 				</ul>
 					<p>discord: <a href="https://discord.com/users/234447549044359168">@mitowo_</a></p>
-			</header>
+					<br>
+					<b><a href="\skins">osu! skins I use</a></b>
 		</center>
+
+		<g style="position: absolute; bottom: 0; left: 0;"><audio controls>
+			<source src="imafailure.mp3" type="audio/mpeg">
+		  Your browser does not support the audio element.
+		  </audio>
+		  </g>
+
+		<g style="position: absolute; bottom: 0; left: 0; width: 99.7%; text-align: right;">massive thanks to <a href="https://www.pixiv.net/en/users/25170019">Rune</a> for helping with the creation of my OC (and the artwork!)</g>	
+
+	</header>
+	</div>
 	</body>
 </html>
